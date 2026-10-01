@@ -8,6 +8,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardController;
 
 // Route Login (tidak perlu auth)
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -17,14 +18,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Route yang wajib login
 Route::middleware('auth')->group(function () {
 
-    Route::get('/', function () {
-        return redirect('/dashboard');
-    });
-
-    Route::get('/dashboard', function () {
-        return view('dashboard.index');
-    })->name('dashboard');
-
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    
     Route::get('/profil', function () {
         return view('profil.index');
     })->name('profil.index');

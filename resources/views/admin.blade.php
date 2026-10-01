@@ -31,7 +31,7 @@
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="{{ url('/dashboard') }}" class="navbar-brand mx-4 mb-3">
                     <h3 class="d-flex align-items-center">
-                        <img class="logo-sekolah" src="{{ asset('asset/img/al-haq.jpg') }}" alt=""
+                        <img class="logo-sekolah" src="{{ asset('asset/img/alhaq.jpg') }}" alt=""
                             style="height: 45px; width: auto; margin-right: 10px;">
                         <span>Al-HAQ</span>
                     </h3>
@@ -137,8 +137,8 @@
                             {{-- Form Logout (WAJIB pakai POST) --}}
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <button type="submit" class="dropdown-item">
-                                    <i class="fa fa-sign-out-alt me-2"></i>Log Out
+                                <button type="submit" class="dropdown-item logout-item">
+                                    <i class="fas fa-sign-out-alt me-2" style="color: #dc3545 !important;"></i>Log Out
                                 </button>
                             </form>
                         </div>
